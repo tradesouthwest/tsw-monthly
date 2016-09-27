@@ -1,0 +1,389 @@
+/* Project Name: TSW-Monthly
+ */
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.container {
+  background: white;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+table {
+  background-color: #fff;
+}
+th {
+  text-align: left;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 3px 6px;
+  line-height: 1.128;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+td{border-right: thin solid #ddd;} tr:last-child td {border-bottom: thin solid #ddd;}
+
+.nav li a {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+.nav li a:focus,
+.nav li a:active:focus,
+.nav li a.active:focus,
+.nav li a.focus,
+.nav li a:active.focus,
+.nav li a.active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.nav li a:hover,
+.nav li a:focus,
+.nav li a.focus {
+  color: #333;
+  text-decoration: none;
+}
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+form.upform input,
+td.upform input {
+  background: #fafafa;
+  background-image: none;
+  border: none;
+}
+form.upform input[type=submit] {
+  background: #ddd;
+  cursor: pointer;
+}
+
+.success-message h1 {
+  color: green;
+}
+.pull-right {
+  width: 90%;
+  margin: 15px auto;
+  float: right;
+  text-align: right;
+}
+
+/* calendar styles */
+div#calendar{
+  margin: 30px 70px;
+  padding:0px;
+  width: 602px;
+  font-family:Helvetica, "Times New Roman", Times, serif;
+}
+div#calendar div.box{
+    position:relative;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:40px;
+    background-color:   #787878 ;
+}
+div#calendar div.header{
+    line-height:40px;
+    vertical-align:middle;
+    position:absolute;
+    left:11px;
+    top:0px;
+    width:582px;
+    height:40px;
+    text-align:center;
+}
+div#calendar div.header a.prev,div#calendar div.header a.next{
+    position:absolute;
+    top:0px;
+    height: 17px;
+    display:block;
+    cursor:pointer;
+    text-decoration:none;
+    color:#FFF;
+}
+div#calendar div.header span.title{
+    color:#FFF;
+    font-size:18px;
+}
+
+div#calendar div.header a.prev{
+    left:0px;
+}
+div#calendar div.header a.next{
+    right:0px;
+}
+div#calendar div.box-content{
+    border:1px solid #787878 ;
+    border-top:none;
+}
+div#calendar ul.label{
+    float:left;
+    margin: 0px;
+    padding: 0px;
+    margin-top:5px;
+    margin-left: 5px;
+}
+div#calendar ul.label li{
+    margin:0px;
+    padding:0px;
+    margin-right:5px;
+    float:left;
+    list-style-type:none;
+    width:60px;
+    height:40px;
+    line-height:40px;
+    vertical-align:middle;
+    text-align:center;
+    color:#000;
+    font-size: 15px;
+    background-color: transparent;
+}
+
+div#calendar ul.dates{
+    float:left;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+/** overall width = width+padding-right**/
+div#calendar ul.dates li{
+    margin:0px;
+    padding:0px;
+    margin-right:5px;
+    margin-top: 5px;
+    line-height:80px;
+    vertical-align:middle;
+    float:left;
+    list-style-type:none;
+    width:60px;
+    height:60px;
+    font-size:25px;
+    background-color: #DDD;
+    color:#000;
+    text-align:center;
+}
+:focus{
+    outline:none;
+}
+div.clear{
+    clear:both;
+}
+/* .page can be adapted to print styles for page size */
+.page {
+    font-size: 11pt;
+    margin: 0 auto;
+}
+
+/* PRINT media styles */
+@media print {
+  *,
+  *:before,
+  *:after {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  .navbar {
+    display: none;
+  }
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .label {
+    border: 1px solid #000;
+  }
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+  form input[type=text] {
+    background: #fff;
+	}
+
+	@page {
+		margin: 0;
+		}
+	body {
+	background: #fff;
+	color: #000;
+	font-size: 11pt;
+	line-height: 150%;
+	margin: 0px;
+	margin-top: 1cm;
+	margin-right: .5cm;
+	margin-bottom: 0cm;
+	margin-left: 1.67cm;
+	}
+  .nav > * {
+	  display: none;
+	  }
+	.noprint {
+		visibility: hidden;
+		color: transparent;
+		background: transparent;
+		}
+}
+/* Have a wonderful time TSW=|= */
