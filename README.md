@@ -54,8 +54,12 @@ Very basic PHP Apache Server, LAMP style install:
 * instatiate spl register for require or includes
 * faster return to page after edit... link-less
 
+## Demo
+http://larryjudd.us/dev/tsw-monthly/index.php
+
 ## Contributors
 Open for contributions.
+@Xu Ding for Calendar script
 
 ## License
 Licensed under Apache Open Source. You can use this script for free for any private or commercial projects.
