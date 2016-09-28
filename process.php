@@ -28,7 +28,8 @@ require_once 'inc/dbh.php';
 `dtpaid` `notes` `more`
 */
 
-if( isset( $_POST['newval_jan'])){
+if( isset( $_POST['newval_jan']))
+{
 	$id      = $_POST['id'];
 	$bill    = $_POST['bill'];
 	$amnt    = $_POST['amnt'];
@@ -39,37 +40,42 @@ if( isset( $_POST['newval_jan'])){
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	  	$sql = "UPDATE jan
-					SET `bill` = :bill, `amnt` = :amnt, `dtdue` = :dtdue, `dtpaid` = :dtpaid, `notes` = :notes
-					WHERE `id` = :id";
+		    SET `bill` = :bill, `amnt` = :amnt, `dtdue` = :dtdue, `dtpaid` = :dtpaid, `notes` = :notes
+		    WHERE `id` = :id";
 			$stmt = $pdo->prepare($sql);
-			$stmt->execute(array(':bill' => $bill, ':amnt' => $amnt, ':dtdue' => $dtdue, ':dtpaid' => $dtpaid,
-				                        ':notes' => $notes, ':id' => $id ));
-				if( $stmt !==false){
-			        //Database::disconnect();
-  			       	Database::disconnect();
-                    echo "<div class='success-message pull-right'><h1>Successfull activity</h1><h2>Entry No. '" . $id . "' Name '" . $bill . "' Updated</h2>
-                    <p><a href=\"janview.php\">Back to January</a></p></div>";
-				} else { print('no go'); }
+			$stmt->execute(array(
+			    ':bill' => $bill, ':amnt' => $amnt, ':dtdue' => $dtdue, ':dtpaid' => $dtpaid, ':notes' => $notes, 
+			    ':id' => $id )
+			    );
+			if( $stmt !==false)
+			{
+			//Database::disconnect();
+  			Database::disconnect();
+                        echo "<div class='success-message pull-right'><h1>Successfull activity</h1><h2>Entry No. '" . $id . "' Name '" . $bill . "' Updated</h2>
+                        <p><a href=\"janview.php\">Back to January</a></p></div>";
+			} else { print('no go'); }
 }
 ?>
 <?php
-if( isset( $_POST['submit_jan'])){
+    if( isset( $_POST['submit_jan']))
+    {
 ?>
-		      <table class="table">
+		    
+                <table class="table">
                   <thead>
                     <tr>
                     <th>Bill</th>
                     <th>Amount</th>
                     <th>Date Due</th>
-		            <th>Date Paid</th>
-		            <th>Notes (chk#)</th>
-		            <th class="noprint">update</th>
+		    <th>Date Paid</th>
+		    <th>Notes (chk#)</th>
+		    <th class="noprint">update</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody><form action="" method="POST">
 
 <?php
-$id = $_POST['id'];
+        $id = $_POST['id'];
 
 	$pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -83,20 +89,21 @@ $id = $_POST['id'];
 			if( !empty ($data['dtdue'])) $dtdue  = $data['dtdue'];
 			if( !empty ($data['dtpaid'])) $dtpaid = $data['dtpaid'];
 			if( !empty ($data['notes'])) $notes    = $data['notes'];
-		?>
+?>
 
                 <tr>
-                <td><form action="" method="POST"><input type="text" name="bill" value="<?php echo $bill; ?>"></td>
+                <td><input type="text" name="bill" value="<?php echo $bill; ?>"></td>
                 <td><input type="text" name="amnt" value="<?php echo $amnt; ?>"></td>
-		        <td><input type="text" name="dtdue" value="<?php echo $dtdue; ?>"></td>
-		        <td><input type="text" name="dtpaid" value="<?php echo $dtpaid; ?>"></td>
+		<td><input type="text" name="dtdue" value="<?php echo $dtdue; ?>"></td>
+		<td><input type="text" name="dtpaid" value="<?php echo $dtpaid; ?>"></td>
                 <td><input type="text" name="notes"   value="<?php echo $notes; ?>"></td>
                 <td class="noprint">
                     <input type="hidden" value="<?php echo $id; ?>" name="id">
-                    <input type="submit" name="newval_jan" value="update"></form></td>
+                    <input type="submit" name="newval_jan" value="update"></td>
                 </tr>
-                </tbody>
+                </form></tbody>
             </table>
+		    
 <?php
     }
 ?>
@@ -117,8 +124,8 @@ if( isset( $_POST['newval_feb'])){
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	  	$sql = "UPDATE feb
-					SET `bill` = :bill, `amnt` = :amnt, `dtdue` = :dtdue, `dtpaid` = :dtpaid, `notes` = :notes
-					WHERE `id` = :id";
+				SET `bill` = :bill, `amnt` = :amnt, `dtdue` = :dtdue, `dtpaid` = :dtpaid, `notes` = :notes
+				WHERE `id` = :id";
 				$stmt = $pdo->prepare($sql);
 				$stmt->execute(array(':bill' => $bill, ':amnt' => $amnt, ':dtdue' => $dtdue, ':dtpaid' => $dtpaid,
 				':notes' => $notes, ':id' => $id,));
@@ -139,9 +146,9 @@ if( isset( $_POST['submit_feb'])){
                     <th>Bill</th>
                     <th>Amount</th>
                     <th>Date Due</th>
-		            <th>Date Paid</th>
-		            <th>Notes (chk#)</th>
-		            <th class="noprint">update</th>
+		    <th>Date Paid</th>
+		    <th>Notes (chk#)</th>
+		    <th class="noprint">update</th>
                     </tr>
                   </thead>
                   <tbody>
