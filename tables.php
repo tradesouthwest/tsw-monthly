@@ -18,6 +18,7 @@ if(!isset($_SESSION)){session_start();}
                 <?php include 'nav.php'; ?>
 
                 <h1>Monthly Bills Due Form Manager</h1>
+                <h4><?php echo date('m-d-Y'); ?></h4>
 
                 <div class="nav">
                     <ul class="list-inline">
