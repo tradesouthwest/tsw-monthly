@@ -535,4 +535,4 @@ CREATE TABLE IF NOT EXISTS `tsw_members` (
 --
 
 INSERT INTO `tsw_members` (`idm`, `phonenumber`, `firstname`, `lastname`, `email`, `dateregistered`, `level`, `username`, `password`, `active`, `resetToken`, `resetComplete`) VALUES
-(1, '520-424-4184', 'Larry', 'Judd', 'tradesouthwest@gmail.com', '07/02/2016 02:03:10', 0, 'monthly', '708638881f3bac9d9c8c742c79502811', 1, NULL, 'No');
+(1, '520-555-1234', 'Larry', 'Judd', 'tradesouthwest@notrealemail.rocks', '07/02/2016 02:03:10', 0, 'monthly', '708638881f3bac9d9c8c742c79502811', 1, NULL, 'No');
