@@ -903,7 +903,7 @@ if( isset( $_POST['newval_dec'])){
 
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	  	$sql = "UPDATE dec
+	  	$sql = "UPDATE `dec`
 					SET `bill` = :bill, `amnt` = :amnt, `dtdue` = :dtdue, `dtpaid` = :dtpaid, `notes` = :notes
 					WHERE `id` = :id";
 				$stmt = $pdo->prepare($sql);
@@ -938,7 +938,7 @@ $id = $_POST['id'];
 
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "SELECT * FROM dec WHERE id = ?";
+		$sql = "SELECT * FROM `dec` WHERE id = ?";
 			$q = $pdo->prepare($sql);
 			$q->execute(array($id));
 				$data = $q->fetch(PDO::FETCH_ASSOC);
