@@ -42,7 +42,7 @@ if (!isset($_SESSION['user_session']))
 require 'inc/dbh.php';
 	$pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = $pdo->query("SELECT * FROM dec WHERE more = 0");
+	$sql = $pdo->query("SELECT * FROM `dec` WHERE more = 0");
 		foreach ($sql as $row) {
 ?>
 
@@ -79,7 +79,7 @@ require 'inc/dbh.php';
 `id` `bill` `amnt` dtdue`
 `dtpaid` `notes` `more`
 */
-$sql = $pdo->query("SELECT * FROM dec WHERE more = 1");
+$sql = $pdo->query("SELECT * FROM `dec` WHERE more = 1");
 	foreach ($sql as $row) {
 ?>
 
