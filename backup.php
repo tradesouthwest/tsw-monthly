@@ -110,7 +110,7 @@ $dtdue = $_POST['dtdue'][$key];
 $dtpaid = $_POST['dtpaid'][$key];
 $notes = $_POST['notes'][$key];
 
-   $sql = "UPDATE $table2 SET `bill` = :bill, `amnt` = :amnt, `dtdue` = :dtdue, `dtpaid` = :dtpaid, `notes` = :notes
+   $sql = "UPDATE `$table2` SET `bill` = :bill, `amnt` = :amnt, `dtdue` = :dtdue, `dtpaid` = :dtpaid, `notes` = :notes
 					WHERE `id` = :id";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(':bill' => $bill, ':amnt' => $amnt, ':dtdue' => $dtdue, ':dtpaid' => $dtpaid,
@@ -148,7 +148,7 @@ if( isset( $_POST['submit_clone'])){
 require 'inc/dbh.php';
 	$pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = $pdo->query("SELECT * FROM $table1");
+	$sql = $pdo->query("SELECT * FROM `$table1`");
 		foreach ($sql as $row) {
 ?>
 
@@ -204,7 +204,7 @@ if( isset( $_POST['submit_select'])){
 require 'inc/dbh.php';
 	$pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = $pdo->query("SELECT * FROM $selectmonth");
+	$sql = $pdo->query("SELECT * FROM `$selectmonth`");
 		foreach ($sql as $row) {
 ?>
 
